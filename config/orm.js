@@ -1,17 +1,17 @@
 // Import MySQL connection.
-var connection = require("../config/connection.js");
+const connection = require("../config/connection.js");
 
-function selectAll(){
+const orm = {
+    selectAll: function(){
 
-}
+    },
+    insertOne: function(){
 
-function insertOne(){
+    },
+    updateOne: function(){
 
-}
-
-function updateOne(){
-
-}
+    }
+};
 
 // Export the orm object for the model (cat.js).
 module.exports = orm;
