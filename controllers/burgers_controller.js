@@ -3,6 +3,7 @@ const burger = require("../models/burger");
 const router = express.Router();
 
 router.get("/", function(req, res) {
+    console.log("select all");
     burger.selectAll(function(data) {
         const burgerObj = {
             burgers: data
@@ -13,7 +14,10 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/burger", function(req, res) {
+    console.log("insert burger");
+    console.log(req.body.burgerName);
     burger.insertOne(req.body.burgerName, function(data) {
+        console.log(data);
         res.json({id: data.insertId});
     });
 });
